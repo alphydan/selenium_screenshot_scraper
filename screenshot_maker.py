@@ -1,19 +1,18 @@
 from selenium import webdriver
 
 list_of_websites = [
-'http://www.google.com',
-'https://www.yahoo.com/',
-'https://duckduckgo.com/'
+    'http://www.google.com',
+    'https://www.yahoo.com/',
+    'https://duckduckgo.com/'
 ]
-
 
 # Create the webdriver
 br = webdriver.PhantomJS()
+br.set_window_size(2500, 1240)
 
-# loop over the websites
 for web in list_of_websites:
     br.get(web)
-    #name the output picture
+    # name the output picture
     file_name = web.split('www.')
     if len(file_name) > 1:
         file_name = file_name[1].split('/')[0]
